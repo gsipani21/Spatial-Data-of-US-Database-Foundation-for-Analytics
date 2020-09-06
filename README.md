@@ -78,13 +78,16 @@ On condition where stat_cause_code is equal to 5
 Sorting in ascending order with respect to Stat Cause code
 
 -- Clean Up --
-/* select sr.NWGC_Unit_name as Forest_Name, f.STATE
+
+/* 
+select sr.NWGC_Unit_name as Forest_Name, f.STATE
 from fire as f
 Join nwgc_reporting_agency as sr on f.NWCG_REPORTING_UNIT_ID = sr.NWGC_Reporting_unit_id
 where f.STAT_CAUSE_CODE = 5
 group by f.STATE
 order by count(f.STAT_CAUSE_CODE) asc 
-Limit 2;*/
+Limit 2;
+*/
 
 Conclusion: The 2 states have the least chance to win a share of the fund are DC and PR
 
