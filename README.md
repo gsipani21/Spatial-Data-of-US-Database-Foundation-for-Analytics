@@ -7,22 +7,23 @@ Created an ER diagram using SQL server (see the attached file)
 
 Assumptions/Notes About Data Entities and Relationships
 Assumption:
-1.	From the SQLite dataset only fires, NWGC unit details table provides the information required
-2.	To remove the null values we have created separate data tables for ICS_209_NUMBER and MTBS_details
+1.	From the SQLite dataset only fires, NWGC unit details table provides the information required.
+2.	To remove the null values we have created separate data tables for ICS_209_NUMBER and MTBS_details.
 3.	The NWGC Reporting Agency data will be stored in NWGC – Unit_Details table.
-4.	Latitude and Longitude is used as composite key to define the location of the fire incident
+4.	Latitude and Longitude is used as composite key to define the location of the fire incident.
 5.	Size of the area where the fire incident took place are divided into various classes like 0 but less than 0.25 acres is A.
-6.	There are various agency that prepares the report of incidents which took place at a certain locations
+6.	There are various agency that prepares the report of incidents which took place at a certain locations.
 7.	The column county in the fire table from the SQLite dataset does not have a normalized entry.
+
 Relationship:
-1.	One Fire detail can have zero to many ICS_209_INCIDENT_NUMBER
-2.	One Fire detail can have zero to many MTBS_ID
-3.	One SOURCE_REPORTING_UNIT will one to many Fire incidents details
+1.	One Fire detail can have zero to many ICS_209_INCIDENT_NUMBER.
+2.	One Fire detail can have zero to many MTBS_ID.
+3.	One SOURCE_REPORTING_UNIT will one to many Fire incidents details.
 4.	A Fire_size can be assigned to one to many fire incidents.
 5.	 A Fire Location can have one or many fire incidents.
 6.	One Owner can have one to many fire incidents and one fire incident can take place in a location that have only one owner.
 7.	One NWGC Reporting Agency can report one to many fire incidents but one fire incident can be reported by one agency.
-8.	A Stat_cause will have one to many fire incidents but one fire incident will have only one Stat_cause
+8.	A Stat_cause will have one to many fire incidents but one fire incident will have only one Stat_cause.
 
 Include reasons why the data model is in 3NF.
 •	Each table has its own functionality. 
@@ -32,8 +33,8 @@ Include reasons why the data model is in 3NF.
 
 Data in the Database
 
-Table Name	          Primary                       Key	Foreign Key	        # of Rows in Table
-FIRE	                FOD_ID                        Latitude                  1880465
+Table Name		Primary Key		Foreign Key	           # of Rows in Table
+FIRE			FOD_ID                      Latitude                  1880465
                                                     Longitde
                                                     NWGC_Reporting_Unit_Id
                                                     Unit_Details_Code
@@ -55,8 +56,9 @@ Fire_Location         Latitude                                               158
 Unit_Details          Code                                                      5867
                       State
                       Country
-NWGC_Reporting_Agency NWGC_REPORTING_UNIT	Code      State                       5867
-                                                    Country	
+NWGC_Reporting_Agency NWGC_REPORTING_UNIT	Code				5867
+						State
+                                                Country	
 Owner_Details         OWNER_CODE		16
 
  
