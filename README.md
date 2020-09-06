@@ -25,11 +25,11 @@ Relationship:
 7.	One NWGC Reporting Agency can report one to many fire incidents but one fire incident can be reported by one agency.
 8.	A Stat_cause will have one to many fire incidents but one fire incident will have only one Stat_cause.
 
-Include reasons why the data model is in 3NF.
-•	Each table has its own functionality. 
-•	Every table has a primary key and each table contains only atomic values which satisfies the condition of 1NF. 
-•	Every column in each table is dependent on a single primary key and there are no partial dependencies. 
-•	There are no transitive functional dependencies between any column in table which satisfies the condition of 3NF 
+Include reasons why the data model is in 3NF:
+1.	Each table has its own functionality. 
+2.	Every table has a primary key and each table contains only atomic values which satisfies the condition of 1NF. 
+3.	Every column in each table is dependent on a single primary key and there are no partial dependencies. 
+4.	There are no transitive functional dependencies between any column in table which satisfies the condition of 3NF 
 
 Data in the Database
 
